@@ -1,0 +1,8 @@
+.book{
+    cursor: pointer;
+    transition: 200ms;
+}
+.book:hover{
+    color:tomato;
+    text-decoration:underline;
+}

@@ -1,0 +1,39 @@
+body{
+    background-image: url(https://csc225.matgargano.com/app/uploads/2018/09/background-2462431_1920.jpg);
+}
+
+.form-container{
+    background-color:#fff;
+    width:500px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.padding-15{
+    padding:15px;
+}
+.text-center{
+    text-align: center;
+}
+.width-200{
+    width:200px;
+}
+.block{
+    display:inline-block;
+}
+.underline{
+    text-decoration: underline;
+}
+.width-100{
+    width:100px;
+}
+.width-400{
+    width:400px;
+}
+.height-200{
+    height:200px;
+}
+.submit-button{
+    background: #000;
+    color:#fff;
+    padding:10px 20px;
+}

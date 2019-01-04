@@ -1,0 +1,54 @@
+<!-- This is the practice done by myself. -->
+<!DOCTYPE html>
+<html>
+   <head>
+       <style>
+           .container {
+               /* -ms- is for microsoft. */
+               list-style: none;
+               width: 70%;
+               margin: 0; /*This makes the container closer to the top edge.*/
+               display: -webkit-flex;
+               display: -moz-flex;
+               display: flex;
+               border: 2px solid rgba(133, 200, 192, 0.6);
+               flex-direction: row;
+               flex-wrap: wrap;
+               justify-content: flex-start;
+               align-items: center;
+               }
+
+           .box:nth-of-type(1) {order: 3;}
+           .box:nth-of-type(2) {order: 5;}
+           .box:nth-of-type(3) {order: 2;}
+           .box:nth-of-type(4) {order: 1;}
+           .box:nth-of-type(5) {order: 6;}
+           .box:nth-of-type(6) {order: 4;}
+
+           .box {
+               width: 60px;
+               height: 55px;
+               border-radius: 20px;
+               border: 1.5px solid rgb(185, 164, 233);
+               background: rgba(233, 164, 200);
+               /*line-height and text-align should be combined
+               to use so that content is centered actually.*/
+               line-height: 55px;
+               text-align: center;
+               margin: 5px 10px 5px 10px;
+               padding: 5px;
+           }
+
+       </style>
+   </head>
+   <body>
+       <ul class='container'>
+           <li class='box'>1</li>
+           <li class='box'>2</li>
+           <li class='box'>3</li>
+           <li class='box'>4</li>
+           <li class='box'>5</li>
+           <li class='box'>6</li>
+       </ul>
+   </body>
+</html>

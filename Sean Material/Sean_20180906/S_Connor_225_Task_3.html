@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Task 3</title>
+
+        <style>
+            .No-Top-bottom-Margins{
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+            body{
+            font-weight: bold;
+            }   
+            </style>
+    </head>
+    <body>
+        <form> 
+           <fieldset>
+               <legend>Personal Information</legend>
+               <label for="first-Name"> First Name*:</label> 
+               <input id="first-Name" required type="text" name="first-Name" placeholder="Your first name"><br>
+
+               <label for="last-Name">Last Name*:</label>
+               <input id="last-Name" required type ="text" name="last-Name" placeholder="Your last name"><br>
+
+               <label for="Email">Email Address*:</label>
+               <input id="Email" required type="email" name="Email" placeholder="Your email address"><br>
+
+               <label for="password">Password input*:</label>
+               <input id="password" required type="password" name="password"><br>
+
+               <label for="confirm_Password">Repeat password*:</label>
+               <input id="confirm_Password" required type="password" name="confirm_Password"><br>
+           </fieldset>
+
+            <fieldset>
+                <legend>Profile Information</legend>
+                <label>Grade Level</label>
+                <input name="glevel" id="freshman" type=radio value="freshamn">
+                <label for="freshman">Freshman</label>
+
+                <input name="glevel" id="sophmore" type=radio value="Sophmore">
+                <label for="sophmore">Sophomore</label>
+
+                <input name="glevel" id="junior" type=radio value="junior">
+                <label for="junior">Junior</label>
+
+                <input name="glevel" id="senior" type=radio value="senior">
+                <label for="senior">Senior</label>
+
+                <input name="glevel" id="graduate" type=radio value="graduate">
+                <label for="graduate">Graduate</label><br>
+
+                <label class="No-Top-bottom-Margins">Favorite Genre of Music*:</label>
+
+                <select name="genre" id="genre" multiple="multiple" required="required">
+                        <option value="Rock">rock</option>
+                        <option value="HipHop">hip hop</option>
+                        <option value="EDM">EDM</option>
+                        <option value="Classical">classical</option>
+                        </select><br>
+
+                <label class="No-Top-bottom-Margins">Favorite Member of Wu Tang Clan*:</label>
+                <select name="wutang" id="wutang" required="required">
+                        <option id="sel" value="">-- Select --</option>
+                        <option value="RzA">RzA</option>
+                        <option value="GzA">GzA</option>
+                        <option value="Ol' Dirty">Ol' Dirty</option>
+                        <option value="Inspectah Deck">Inspectah Deck</option>
+                        <option value="Raekwon">Raekwon</option>
+                        <option value="U-God">U-God</option>
+                        <option value="Ghostface Killah">Ghostface Killah</option>
+                        <option value="Method Man">Method Man</option>
+                </select><br>
+
+                <input type="checkbox" id="spam" value="spam"><label for="spam">Sign me up for spam emails, because I don't get enough junk email!</label>
+            </fieldset>
+           <label>* Required</label> <input type="Submit" value="Submit This Form">
+    </form>
+    </body>
+    </html>
+  

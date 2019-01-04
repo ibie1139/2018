@@ -1,0 +1,51 @@
+*{
+    box-sizing:border-box;
+}
+.padding-10{
+    padding:10px;
+}
+.flex{
+    display:flex;
+}
+.display-mobile-only{
+    display:none;
+}
+
+@media only screen and (max-width:600px){
+    .flex-stack-mobile{
+        flex-direction: column-reverse;
+    }
+}
+
+.tomato{
+    background-color:tomato;
+}
+
+.cyan{
+    background-color: cyan;
+}
+
+article{
+    flex-basis: 75%;
+}
+
+aside{
+    flex-basis: 25%;
+}
+
+.inline{
+    display: inline;
+}
+
+footer{
+    background-color:purple;
+}
+footer a{
+    color: #fff;
+}
+.no-margin{
+    margin:0;
+}
+footer a:hover{
+    text-decoration: none;
+}

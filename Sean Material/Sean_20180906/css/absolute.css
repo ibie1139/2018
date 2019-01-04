@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+.card{
+    position: relative;
+    width: 640px;
+}
+.meta{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    background: rgba(0,0,0,0.5);
+    color:white;
+    width:100%;\
+    display: none;
+}
+.card:hover .meta{
+    display: block;
+}
+450 by 300

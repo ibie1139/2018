@@ -1,0 +1,12 @@
+.background-image{
+    background:url("../bg.jpg");
+    background-size: cover;
+}
+.no-gutters > .row{
+    margin:0;
+}
+.no-gutters > .col,
+.no-gutters > [class*="col-"] {
+      padding-right: 0;
+      padding-left: 0;
+    }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!-- This is a basic linear-gradient and radial-gradient sample. -->
+<html>
+    <head>
+        <style>
+            .rgradient1 {
+                height: 300px;
+                width: 300px;
+                background-image: radial-gradient(circle at top left,rgba(255,255,0,1), rgba(255,138,0,1));
+                background-image: -webkit-radial-gradient(circle at top left,rgba(255,255,0,1), rgba(255,138,0,1));
+                background-image: -moz-radial-gradient(circle at top left, rgba(255,255,0,1), rgba(255,138,0,1));
+                text-align: center;
+                line-height: 50px;
+                font-family: sans-serif;
+                color: rgb(0,0,135);
+            }
+            .lgradient1 {
+                margin-top: 10px;
+                height: 60px;
+                background: linear-gradient(to left , rgba(0,0,0,1), rgba(0,0,135, 0.4));
+                /*Same as syntax--
+                background: linear-gradient(right , rgba(0,0,0,1), rgba(0,0,135, 0.4));*/
+                background: -webkit-linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,135, 0.4));
+                background: -moz-linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,135, 0.4));
+                text-align: center;
+                line-height: 60px;
+                font-family: sans-serif;
+                color: white;
+            }
+            .rgradient2 {
+                margin-top:10px;
+                height: 288px;
+                width: 90%;
+                /* 95px after circle is to indicate the radius of the circle */
+                background-image: radial-gradient(circle 175px at top center,rgba(125,255,100,1), rgba(55,138,222,1));
+                background-image: -webkit-radial-gradient(circle 175px at top center,rgba(255,255,0,1), rgba(255,138,0,1));
+                background-image: -moz-radial-gradient(circle 175px at top center, rgba(255,255,0,1), rgba(255,138,0,1));
+                text-align: center;
+                line-height: 60px;
+                font-family: sans-serif;
+                color: white;
+            }
+            .lgradient2 {
+                margin-top: 10px;
+                height: 110px;
+                background: linear-gradient(left , rgba(0,0,0,1), rgba(0,0,135,1), rgba(0, 108,195, 1), rgba(100, 146,105,1));
+                background: -webkit-linear-gradient(left, rgba(0,0,0,1), rgba(0,0,135, 0.4),rgba(0, 108,195, 1), rgba(100, 146,105,1));
+                background: -moz-linear-gradient(right, rgba(0,0,0,1), rgba(0,0,135, 0.4),rgba(0, 108,195, 1), rgba(100, 146,105,1));
+                text-align: center;
+                line-height: 110px;
+                font-family: sans-serif;
+                color: white;
+            }
+            .lgradient3 {
+                margin-top: 10px;
+                height: 110px;
+                background: linear-gradient(left ,red, yellow 25%);
+                background: -webkit-linear-gradient(left, red, yellow 25%);
+                background: -moz-linear-gradient(right,red, yellow 25%);
+                text-align: center;
+                line-height: 110px;
+                font-family: sans-serif;
+                color: purple;
+            }
+            .lgradient4 {
+                margin-top: 10px;
+                height: 110px;
+                background: linear-gradient(left ,red, yellow 15%, rgba(0, 108,195, 1) 25%, rgba(0, 108,195, 1) 60%, rgba(0,0,135, 0.4) 60%);
+                background: -webkit-linear-gradient(left, red, yellow 15%, rgba(0, 108,195, 1) 25%, rgba(0, 108,195, 1) 60%, rgba(0,0,135, 0.4) 60%);
+                background: -moz-linear-gradient(right,red, yellow 15%, rgba(0, 108,195, 1) 25%, rgba(0, 108,195, 1) 60%, rgba(0,0,135, 0.4) 60%);
+                text-align: center;
+                line-height: 110px;
+                font-family: sans-serif;
+                color: purple;
+            }
+        </style>
+    </head>
+    <body>
+        <div class='rgradient1'>The center starts from top left(position with 2 named values).</div>
+        <div class='lgradient1'>Directions 'right' and 'to left' are the same, meaning from right.</div>
+        <div class='rgradient2'>Syntax: shape size(using length here) at postion(use two named values)</div>
+        <div class='lgradient2'>linear-gradient: chaining multiple colors</div>
+        <div class='lgradient3'>linear-gradient: color-stops--red runs till 25% and yellow takes from there</div>
+        <div class='lgradient4'>linear-gradient: hard color-stops--change colors instantly by having 
+            two color stops that are the same
+        </div>
+    </body>
+</html>

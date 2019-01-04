@@ -1,0 +1,26 @@
+.box1{
+    background-color:blue;
+    height:100px;
+    width:100px;
+  /*  position: absolute;
+    z-index:1;
+    */
+}
+.box2{
+    height:2000px;
+    width:200px;
+    background-color: tomato;
+    /* position: absolute;
+    z-index: -1;
+    top:10px; */
+}
+.ball{
+    height:30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: black;
+    position: fixed;
+    bottom:30px;
+    right:30px;
+
+}

@@ -1,0 +1,28 @@
+jQuery(document).ready(function($){
+    axios.get('http://statenweb.mockable.io/books/').then(function(result){
+        var books = result.data;
+        var booksHTML = books.map(function(book){
+            return $('<p>').addClass('book').data('id', book.id).html(book.title + ' (' + book.id + ')');
+        });
+        $('#books').html(booksHTML);
+    });
+    $('#books').on('click', '.book', function(){
+        var bookId = $(this).data('id');
+        var url = "http://statenweb.mockable.io/books/" + bookId;
+
+        $("#current-book").html('Loading');
+
+        axios.get(url).then(function(book){
+            var title = $('<h2>').html(book.data.title);
+            var author = $('<h3>').html(book.data.author);
+            var genre = $('<p>').html('Genre: ' + book.data.genre);
+            var publisher = $('<p>').html('Publisher: ' + book.data.publisher);
+            $("#current-book").html([
+                title,
+                author,
+                genre,
+                publisher
+            ]);
+        });
+    });
+});

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link href="css/style.css" rel="stylesheet">
+    <title>Webpage</title>
+</head>
+
+<body>
+    <h1 class="text-center">Sign up</h1>
+    <div class="form-container padding-15">
+        <h2 class="underline text-center">Personal Information</h2>
+        <form>
+            <p><label class="block width-200" for="salutation">
+                    Salutation*
+                </label>
+                <select class="width-100 special-input" required id="salutation" name="salutation">
+                    <option value="">-</option>
+                    <option value="ms">Ms.</option>
+                    <option value="mr">Mr.</option>
+                </select>
+            </p>
+            <p>
+                <label class="block width-200" for="name">Name *</label>
+                <input type="text" id="name" required class="special-input width-200" name="user-name" value="Mat" />
+            </p>
+            <p>
+                <label class="block width-200" for="email">Email *</label>
+                <input type="email" class="special-input width-200" id="email" required name="email-address"
+                    placeholder="your email address" />
+            </p>
+            <p>
+                <label class="block width-200" for="password">Password*</label>
+                <input class="special-input width-200" type="password" required minlength="8" name="password" id="password" />
+            </p>
+            <h2 class="underline text-center">Misc. Information</h2>
+            <p class="text-center">
+                <label for="biography">Biography</label>
+            </p>
+
+            <p class="text-center">
+                <textarea class="width-400 height-200 padding-15" name="biography" id="biography"></textarea>
+            </p>
+            <p class="text-center"><input type="submit" class="submit-button" value="Submit Form"></p>
+
+        </form>
+
+    </div>
+
+</body>
+
+
+</html>
