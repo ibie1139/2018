@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            /*Descendant selector*/
+            #div1 p {
+                background:red;
+            }
+            /*Child selector*/
+            #div1 > p {
+                background: blue;
+            }
+            /*Adjacent sibling selector*/
+            p + p {
+                background: yellow;
+            }
+            #p1 + #p2 {
+                background: pink;
+            }
+            div + p {
+                background: green;
+            }
+            /*Generl sibling combinator seletor: element selected can be anywhere
+            after it, no need to immediately succeed the first element.*/
+            #div3_1 ~ p {
+                background: grey;
+            }
+            /* The following selector has no effect, because adjacent sibling combinator
+            selector should succeed the first element immediately, while #p8 doesn't 
+            succeed #p7 immediately.*/
+            #p7 + #p8 {
+                background: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <div id='div1'>
+            <form>
+                <p>I'm a descendant but not a child.</p>
+            </form>
+            <p>I'm a child.</p>
+        </div>
+        <div id='div2'>
+            <p id='p1'>Line One</p>
+            <p id='p2'>Line Two</p>
+            <div id='div2_1'>Box</div>
+            <p id='p3'>Line Three</p>
+            <p id='p4'>Line Four</p>
+        </div>
+        <div id='div3'>
+                <p id='p5'>Line Five</p>
+                <p id='p6'>Line Six</p>
+                <div id='div3_1'>Box</div>
+                <p id='p7'>Line Seven</p>
+                <div>block</div>
+                <p id='p8'>Line Eight</p>
+            </div>
+    </body>
+</html>

@@ -1,0 +1,98 @@
+<!-- In this document, apart from the content required by prof., 
+I added some other input types and attributes in it. -->
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Task 3</title>
+        <style>
+            .form1 {
+                width: 100%;
+                text-align: left;
+                font-family:'Times New Roman', Times, serif;
+            }
+            .button {
+                background: rgba(255,255,255,1);
+                border-radius: 6px;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <fieldset>
+                <legend>Personal Information</legend>
+                First Name*: 
+                <input type='text' name='first_name' 
+                    placeholder='Your first name' required><br>
+                Last Name*: 
+                <input type='text' name='last_name' 
+                    placeholder='Your last name' required><br>
+                Email Address*: 
+                <input type='email' name='email_address' 
+                    placeholder='Your email address' required><br>
+                Password input*: 
+                <input type='password' name='paswword' required><br>
+                Repeat password*: 
+                <input type='password' name='repeat_pwd' required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Profile Information</legend>
+                Grade Level 
+                <input type='radio' name='grade_level' id='freshman' value='Freshman'>
+                <label for='freshman'>Freshman</label> 
+
+                <input type='radio' name='grade_level' id='sophomore' value='Sophomore'>
+                <label for='sophomore'>Sophomore</label> 
+
+                <input type='radio' name='grade_level' id='junior' value='Junior'>
+                <label for='junior'>Junior</label> 
+
+                <input type='radio' name='grade_level' id='senior' value='Senior'>
+                <label for='senior'>Senior</label> 
+
+                <input type='radio' name='grade_level' id='graduate' value='Graduate'>
+                <label for='graduate'>Graduate</label><br>
+                
+                Favorite Genre of Music*: 
+                <select name='fav_genre_music' size='4' multiple='multiple' required>
+                    <option value='rock'>rock</option>
+                    <option value='hip hop'>hip hop</option>
+                    <option value='edm'>EDM</option>
+                    <option value='classical'>classical</option>
+                    <option value='r&b'>R&B</option>
+                    <option value='folk'>folk music</option>
+                    <option value='jazz'>jazz</option>
+                </select><br>
+
+                Favorite memeber of Wu Tang Clan*: 
+                <select name='fav_member' required>
+                    <option value='' selected>-- Select --</option>
+                    <option value='RzA'>RzA</option>
+                    <option value='GzA'>GzA</option>
+                    <option value='Ol’ Dirty'>Ol’ Dirty</option>
+                    <option value='Inspectah Deck'>Inspectah Deck</option>
+                    <option value='Raekwon'>Raekwon</option>
+                    <option value='U-God'>U-God</option>
+                    <option value='Ghostface Killah'>Ghostface Killah</option>
+                    <option value='Method Man'>Method Man</option>
+                </select><br>
+                <input type='checkbox' id='spam' value='sign_up'>
+                <label for='spam'>Sign me up for spam emails, because I don’t get enough junk email!</label>
+            </fieldset>
+            * Required 
+            <input class='button' type='submit' value='Submit this form!'> 
+            <input class='button' type='reset' value='Reset'>
+        </form>
+    </body>
+</html>
+
+        <!-- Following is the wrong code:
+        <footer>* Required 
+        <input class='button' type='submit' value='Submit this form!'> 
+        <input class='button' type='reset' value='Reset'>
+        </footer>
+        In this one, separate the two form submit/reset buttons away from the form.
+        That's why at first the 'required' attribute doesn't work.
+
+        And in one form, there can be multiple <fieldset>. No need to separate 2 fieldsets to 2 forms.
+         -->

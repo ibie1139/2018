@@ -1,0 +1,25 @@
+four blocks:
+1.navigation: gmail, images, google apps, notifications, account
+Block1: general container -- width: 100%
+Block2: gamil + images -- text with <a> link and hover effect of "text-decoration: underline" --> Block2_1, Block2_2
+Book3: apps, notifications, account -- icon with pop-up window --> Block3_1, Block3_2, Block3_3
+
+2.Google Logo
+BLock1: general container -- width: 100%, text-align: center;
+content: <img>
+
+3.Search box
+Block1: general container -- width: 100%, text-align: center;
+Block2: contain 'Search Box' container <form>
+Block2_1: <input> with placeholder
+Block2_2: microphone icon
+Block2_1 and Block2_2 are contained in BLock2
+
+4.Most used websites
+Block1: general container -- width: 100%, text-align: center;
+(or use flexbox, display:flex, justify-content: space-between, align-content:center; align-items:center;)
+Block2: items -- <a> link and hover effect of background-color change on the whole item
+Content: 
+a.icon_box, icon in it --> border-radius make it a circle
+b.button for setting with a pop-up window
+c.text below the icon

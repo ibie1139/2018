@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Navigation by flex box</title>
+        <style>
+            .top-header {
+                position: fixed;
+                height: 45px;
+                width: 100%;
+                background: rgba(199,0,0,1);
+                color: rgba(255,255,255,1);
+                /* font-weight: bold; */
+                font-family: Helvetica;
+                top: 0;
+                left: 0;
+                display: flex; /*new thing*/
+                display: -webkit-flex;
+                display: -moz-flex;
+                flex-flow: row nowrap; /*flex-direction flex-wrap*/
+                -webkit-flex-flow: row nowrap;
+                -moz-flex-flow: row nowrap;
+                justify-content: space-between;
+                }
+            /* #nav_header, #navigation_bar, #user_info {
+                display: inline-block;
+            } */
+            #nav_header {
+                /* flex: 1; Dont' apply this one. */
+                padding: 8px;
+                font-size: 30px;
+            }
+            #navigation_bar {
+                flex-basis: 70%;
+                align-self: flex-start;
+                margin-left: -105px;
+            } 
+            #navigation_bar > ul > li{
+                margin-top: -15px;
+                display: inline-block;
+                padding: 0 9px 9px 9px;
+                font-size: 15px;
+            }
+            #user_info {
+                padding: 15px 15px 0 0;
+                font-size: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class='top-header'>
+            <div id='nav_header'>SIMS(UAT)</div>
+            <nav id='navigation_bar'>
+                    <ul style="list-style-type:none">
+                        <li>Home</li>
+                        <li>Search</li>
+                        <li>Saved</li>
+                        <li>Packages</li>
+                        <li>Sign Shop</li>
+                        <li>Reports</li>
+                        <li>Options</li>
+                        <li>Messages</li>
+                    </ul>
+                </nav>
+            <div id='user_info'>simsnyc.engineer4</div>
+        </div>
+    </body>
+</html>
