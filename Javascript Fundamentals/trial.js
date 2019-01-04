@@ -974,8 +974,9 @@ console.log(result);//true -- this is a way to test the whole array
 earbud = earbud3.find(bud => bud.earbudId >= 400);
 console.log(earbud);//{earbudId: 456, owner: "Micky"}
 
-result = earbud3.find(bud => {(bud.earbudId > 500);
-console.log(result);
+result = earbud3.find(bud => bud.earbudId > 500);
+console.log(result.owner);//Penny
+console.log(result);//{earbudId: 893, owner: "Penny"}
 
 //Class Basics
 //Keyword "new" can instantiate a new instance of an object and a new object of a class.
