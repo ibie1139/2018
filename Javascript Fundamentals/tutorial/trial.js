@@ -807,7 +807,8 @@ glove5 = (prefix, suffix) => {return prefix + 123 + suffix};
 console.log(glove5('ID: ', '...'));///ID: 123...
 //In the curly bracket, can do more things than just returning values
 
-love5 = _ => 123;//underscore signifies a variable, which is popular in today's coding
+love5 = _ => 123 + _;//underscore signifies a variable, which is popular in today's coding
+console.log(love5(3));//126
 
 //Default Parameters
 //Assign the default value if the user doesn't pass a value for that argument
@@ -975,7 +976,120 @@ earbud = earbud3.find(bud => bud.earbudId >= 400);
 console.log(earbud);//{earbudId: 456, owner: "Micky"}
 
 result = earbud3.find(bud => bud.earbudId > 500);
-console.log(result);
+console.log(result.owner);//Penny
+console.log(result);//{earbudId: 893, owner: "Penny"}
 
 //Class Basics
 //Keyword "new" can instantiate a new instance of an object and a new object of a class.
+class Horse {
+    //Class Constructor:
+    constructor(id, age) {
+        this.id = id;//this keyword is needed.
+        this.age = age;
+    }
+    //Method:
+    identify() {
+        return `This horse, of id: ${this.id}, is at age of ${this.age}.`;//use back-tick
+    }//function in a class no need to use "function" keyword, because it's class method.
+}
+let horse1 = new Horse(234, 5);
+console.log(horse1);//Horse {} -- __proto__: Object
+console.log(horse1.age);
+horse1.id = 356;
+console.log(horse1.identify());
+
+//Inheritance: avoid duplicating code
+//This is a super class, or a base class. Other child classes will extend this one.
+class Vehicle {
+    constructor() {
+        this.type = 'car';
+    }
+    start() {
+        return `Starting: ${this.type}`;
+    }
+}//first letter of the class name is UPPERCASE
+
+class Vehicle1 {
+    //A new. class declaration not inheriting from Vehicle
+}//nothing
+
+let vehicle1 = new Vehicle1();
+console.log(vehicle1);//Vehicle1 {} -- nothing
+
+class Car extends Vehicle {
+    //You put nothing here, but it inherits everything from Super class "Vehicle".
+}
+let car = new Car();
+console.log(car.type);//car
+
+class Car1 extends Vehicle {
+    constructor() {
+        //if you want to define a constructor in this Derived class "Car1", 
+        //but do it in a normal way, just like the super class, get an error.
+        //ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor.
+        //Solution is:
+        super();
+        //this is a special method, calling the super class's constructor
+    }
+}//"extends" means inheriting from super class Vehicle.
+let car1 = new Car1();
+console.log(car1.type);//car -- after calling super() in Car1
+
+//Call the functions in Super Class
+class Car2 extends Vehicle {
+    start1() {
+        return "This, start1(), is a function of the Derived Class";
+    }
+    start2() {
+        return "Now, start2() is a function adding \nthe start() from super class-- "
+        + super.start();//calling super.func from Super Class
+    }
+}
+let car2 = new Car2();
+console.log(car2.start1());
+console.log(car2.start2());
+
+class EarbudClass {
+    //Here, constructor is like the default value
+    constructor() {
+       this.id= 0;//though this is a constuctor, it's of Class, not of Object, thus use ";", not using "," between the properties
+       this.type = 'unknown';
+    }
+    insertInfo(id, type) {
+        this.id = id;
+        this.type = type;
+        return `Earbud id: ${this.id}; type: ${this.type}`;
+    }
+}
+//Note: "class ClassName {}" is the syntax for class declaration. It doesn't accept parameters after the class name via "()".
+//Thus, class EarbudClass(a, b) {...} is SyntaxError.
+
+earbud1 = new EarbudClass();//This only instantiates the class EarbudClass 
+console.log(earbud1.id, earbud1.type);//0 "unknown" -- default value
+
+earbud1.insertInfo(22, "wireless");
+console.log(earbud1.id, earbud1.type);//22 "wireless" -- values changed by the func "insertInfo"
+
+class EarbudClass1 extends EarbudClass {
+    constructor(brand) {
+        super();
+        this.brand = brand;      
+    }
+    insertInfo1(id, type) {
+        //pass arguments to derived class's method, but not to the super class's method
+        return super.insertInfo();
+    }
+    insertInfo2(id, type) {
+        //Pass arguments to both methods in derived class and in super class
+        return super.insertInfo(id, type);
+    }//remember to use "super."
+}
+earbud2 = new EarbudClass1('Heyday');//instiantiate the child class of class EarbudClass1
+
+console.log(earbud2.id, earbud2.type, earbud2.brand);//0 "unknown" "Heyday"
+console.log(earbud2.insertInfo1(98, 'Bluetooth-wireless'));//Earbud id: undefined; type: undefined
+console.log(earbud2.insertInfo2(98, "Bluetooth-wireless"));//Earbud id: 98; type: Bluetooth-wireless
+console.log(earbud1.brand);
+//Result: undefined -- because no "brand" property is defined from the super class EarbudClass.
+
+//Modules
