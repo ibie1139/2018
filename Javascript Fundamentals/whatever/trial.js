@@ -69,9 +69,9 @@ valueList.push(45, 6); // Add one or more values into the array
 console.log(valueList.length);
 console.log(valueList);
 
-delItem1 = valueList.pop(); // Remove the last item out of the array
+let delItem1 = valueList.pop(); // Remove the last item out of the array
 console.log(delItem1, valueList);
-delItem2 = valueList.shift(); //Remove the first item out of the array
+let delItem2 = valueList.shift(); //Remove the first item out of the array
 console.log(delItem2, valueList)
 valueList.push(8, 7, 6, 9, 12);
 console.log(valueList); //Result: [2, 3, 45, 8, 7, 6, 9, 12]
@@ -244,7 +244,7 @@ for(let i=0; i <=3; i++) {
 }//Remember ";" in the for()
 
 //while loop
-value = 1;
+let value = 1;
 while (value <= 6) {
     console.log(value);
     value++;
@@ -261,12 +261,12 @@ for(let suitsIdx=0; suitsIdx<suits.length; suitsIdx++) {
     }
 }
 console.log("In one deck of cards, there are " + deck.length + " cards.");
-for(i=0; i < deck.length; i++) {
+for(let i=0; i < deck.length; i++) {
     console.log(deck[i]);
 }
 playerCards = [deck[0], deck[2], deck[43], deck[12], deck[28]];
 console.log("Your are dealt with: ");
-for (i=0; i<playerCards.length; i++) {
+for (let i=0; i<playerCards.length; i++) {
     console.log(" " + playerCards[i]);
 }
 
@@ -297,30 +297,30 @@ function calculation(value1, value2) {
 console.log(calculation(3.3, 4));
 
 //Game: Blackjack4, using functions
-suits = ['Hearts', 'Clubs', 'Diamonds', 'Spades'];
-values = ['Ace', 'King', 'Queen', 'Jack', 'Ten', 'Nine', 'Eight', 
-    'Seven', 'Six', 'Five', 'Four', 'Three', 'Two'];
-function createCards() {
-    let deck = [];
-    for(let suitsIdx=0; suitsIdx<suits.length; suitsIdx++) {
-        for (let valuesIdx = 0; valuesIdx < values.length; valuesIdx++) {
-            deck.push(values[valuesIdx] + ' of ' + suits[suitsIdx]);
-        }
-    }
-    return deck;
-}
-deck = [];
-deck = createCards();
+// suits = ['Hearts', 'Clubs', 'Diamonds', 'Spades'];
+// values = ['Ace', 'King', 'Queen', 'Jack', 'Ten', 'Nine', 'Eight', 
+//     'Seven', 'Six', 'Five', 'Four', 'Three', 'Two'];
+// function createCards() {
+//     let deck = [];
+//     for(let suitsIdx=0; suitsIdx<suits.length; suitsIdx++) {
+//         for (let valuesIdx = 0; valuesIdx < values.length; valuesIdx++) {
+//             deck.push(values[valuesIdx] + ' of ' + suits[suitsIdx]);
+//         }
+//     }
+//     return deck;
+// }
+// deck = [];
+// deck = createCards();
 
-function getnextCard() {
-    return deck.shift();
-}//No need to pass parameters in. "deck" in the func is the real deck.
-//[array].shift() will return the first one in the array
+// function getnextCard() {
+//     return deck.shift();
+// }//No need to pass parameters in. "deck" in the func is the real deck.
+// //[array].shift() will return the first one in the array
 
-console.log("In one deck of cards, there are " + deck.length + " cards.");
-//Result: 50 cards, because card1 and card2 are taken from the 52 cards.
-playerCards = [getnextCard(), getnextCard(), getnextCard()];
-console.log(playerCards);
+// console.log("In one deck of cards, there are " + deck.length + " cards.");
+// //Result: 50 cards, because card1 and card2 are taken from the 52 cards.
+// playerCards = [getnextCard(), getnextCard(), getnextCard()];
+// console.log(playerCards);
 
 
 //Object basics: object is just a thing combining much information
@@ -545,7 +545,7 @@ glove1 = '30';
 console.log(+glove1,typeof(+glove1));//30 number -- "+" converts a string to a number
 console.log(-glove2);//-49 -- change the sign of a number, neg to pos, or pos to neg
 console.log(-glove1);//-30 -- a string's sign can be changed too
-glove3 = 59;
+let glove3 = 59;
 console.log(--glove3);//58
 console.log(glove3--);//58 -- minus 1 after printgin out the original value
 console.log(glove3);//57
@@ -700,10 +700,10 @@ console.log(glove2.func());//Result: 42
 // In web browsers, the window object is also the global object:
 console.log(this === window); // true
 
-a = 37;
+let a = 37;
 console.log(window.a); // 37
 
-this.b = "MDN";
+let b = "MDN";
 console.log(window.b)  // "MDN"
 console.log(b)         // "MDN"
 
@@ -723,13 +723,13 @@ console.log(f1() === window); // true
 // An object can be passed as the first argument to call or apply and this will be bound to it.
 glove3 = {glove2: 'Custom'};
   
-// This property is set on the global object
-glove2 = 'Global';
+// This property is set on the global 
+// glove2 = 'Global';
 function whatsThis() {
     return this.glove2;  // The value of this is dependent on how the function is called
 }
 
-console.log(whatsThis());          // 'Global'
+// console.log(whatsThis());          // 'Global'
 console.log(whatsThis.call(glove3));  // 'Custom'
 console.log(whatsThis.apply(glove3)); // 'Custom'
 //Where a function uses the this keyword in its body, its value can be bound to a particular object in the call using the call() or apply() methods
@@ -743,7 +743,7 @@ glove1 = {
         return this.gloveId;
     }
 }
-glove4 = {gloveId: 894};
+let glove4 = {gloveId: 894};
 
 console.log(glove1);//Result: {gloveId: 345, getGloveId: f} -- display the "glove1" object
 console.log(glove1.gloveId);//345
@@ -807,8 +807,8 @@ glove5 = (prefix, suffix) => {return prefix + 123 + suffix};
 console.log(glove5('ID: ', '...'));///ID: 123...
 //In the curly bracket, can do more things than just returning values
 
-love5 = _ => 123 + _;//underscore signifies a variable, which is popular in today's coding
-console.log(love5(3));//126
+glove5 = _ => 123 + _;//underscore signifies a variable, which is popular in today's coding
+console.log(glove5(3));//126
 
 //Default Parameters
 //Assign the default value if the user doesn't pass a value for that argument
@@ -1092,4 +1092,11 @@ console.log(earbud2.insertInfo2(98, "Bluetooth-wireless"));//Earbud id: 98; type
 console.log(earbud1.brand);
 //Result: undefined -- because no "brand" property is defined from the super class EarbudClass.
 
-//Modules
+//Modules: organize the code
+//export the module -- see file in folder "tutorial/module_computer.js"
+import { Computer, Computer1, computer1 } from './module_computer.js';
+console.log(computer1.id, computer1.type, computer1.brand);//0 "unknown" "Unknown"
+console.log(computer1.insertInfo(86, "Laptop", "Microsoft"));
+//Result: Computer id: 86; type: Laptop; brand:Microsoft
+
+//Programming the BOM and DOM
