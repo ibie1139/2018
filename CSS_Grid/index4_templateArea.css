@@ -1,0 +1,65 @@
+
+/* Template Areas */
+
+.container1 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 50px auto 50px;
+    grid-gap: 3px;
+    grid-template-areas:
+        "h h h h h h h h h h h h"
+        "m c c c c c c c c c c c"
+        "f f f f f f f f f f f f";
+}
+.header1 {
+    grid-area: h; /* name the grid area */
+}
+.menu1 {
+    grid-area: m; /* name of its grid is m */
+}
+.content1 {
+    grid-area: c;
+}
+.footer1 {
+    grid-area: f;
+}
+
+.container2 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 50px auto 50px;
+    /* The following is a wrong example. the grid-areas can only be retangles, while "f" is in some special shape but not retangule. */
+    grid-template-areas: 
+        "h h h h h h h h h h h h"
+        "m c c c c c c c c c f c"
+        "f f f f f f f f f f f f";
+        /* Only show the last f, but it's longer than 1 fr unit, because for only one, the size of the 1 unit will be adjusted based on the content in f-footer. */
+}
+
+/* if a "." is applied, that grid-cell will be empty. See the changes in DEMO, comparing with container1. */
+.correctContainer2 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 50px auto 50px;
+    grid-template-areas: 
+        "m h h h h h h h h h . ."
+        "m c c c c c c c c c c ."
+        "m f f f f f f f f f f f";
+        /* "m1 h1 h1 h1 h1 h1 h1 h1 h1 h1 h1 ."
+        "m1 c1 c1 c1 c1 c1 c1 c1 c1 c1 c1 c1"
+        "f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 f1 ."; */   
+}
+
+.header2 {
+    grid-area: h;/*can use the same name as the one in .container1, as long as they are not in the same container. */
+}
+.menu2 {
+    grid-area: m;
+}
+.content2 {
+    grid-area: c;
+}
+.footer2 {
+    grid-area: f;
+}
+

@@ -1,0 +1,47 @@
+body {
+    background-color: #ffeead;
+    margin: 15px;
+}
+.container1, .container2 {
+    margin-bottom: 50px;
+}
+
+/*Here, regard each child div as a flex container. Then no need to use text-align for the content in each box, where content here is a number. Not regarding the whole class:container1 as a flex container. */
+.container1 > div {
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;/*Now the width of each div is adjusted according to the font size.*/
+    color: #ffeead;
+}
+
+/*Use 1n, 2n, 3n, 4n as the product of 1,2,3,4*/
+.container1 > div:nth-of-type(1n) {
+    background-color: #96ceb4; /*row: 1,5,7*/
+}
+.container1 > div:nth-of-type(2n) {background-color: #ff6f69;} /*row: 2*/
+/* If (2n) is repeated but in a different color, the color won't change but 2 colors cover on the same box.
+.container > div:nth-of-type(2n) {background-color: #88d8b0;}*/
+.container1 > div:nth-of-type(3n) {background-color: #88bfd8;} /*row: 3,6,9*/
+.container1 > div:nth-of-type(4n) {background-color: #ffcc5c;} /*row: 4,8*/
+
+.container2 > div {
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #ffeead;    
+}
+/*From top to bottom, compare container1 and container2. (2n) and (3n)'s orders reverse.*/
+.container2 > div:nth-of-type(1n) {background-color: #96ceb4;} /*row: 1A,5E,7G*/
+.container2 > div:nth-of-type(3n) {background-color: #88bfd8;} /*row: 3C,9I*/
+.container2 > div:nth-of-type(2n) {background-color: #ff6f69;} /*row: 2B,6F*/
+.container2 > div:nth-of-type(4n) {background-color: #ffcc5c;} /*row: 4D,8H*/

@@ -1,0 +1,49 @@
+<!-- Toggle Class with JQuery -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="basic3.css">
+        <link rel="stylesheet" href="index4_templateArea.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            // $(document).ready(function() {
+            //     $(".footer2").click(function() {
+            //         $(".container2").css("grid-template-areas", 
+            //         {
+            //             '"h h h h h h h h h h h h"
+            //             "m c c c c c c c c c c c"
+            //             "f f f f f f f f f f f f"'
+            //         })
+            //     })
+            // }) -- Set one CSS property's value --> this one doesn't work
+            $(document).ready(function() {
+                $(".footer2").click(function() {
+                    $(".container2").toggleClass("correctContainer2");
+                    // The follwoing is redundant. Error is that the toggled className should not be ".correctContainer2", that dot is the mistake.
+                    // $(".header2").css("grid-area", "h1");
+                    // $(".menu2").css("grid-area", "m1");
+                    // $(".content2").css("grid-area", "c1");
+                    // $(".footer2").css("grid-area", "f1");
+                })
+            });
+        </script>
+        <style>
+        </style>
+        <title>Template Areas</title>
+    </head>
+    <body>
+        <div class="container1">
+            <div class="header1">HEADER</div>
+            <div class="menu1">MENU</div>
+            <div class="content1">CONTENT</div>
+            <div class="footer1">FOOTER</div>
+        </div>
+        <div class="container2">
+            <div class="header2">HEADER</div>
+            <div class="menu2">MENU</div>
+            <div class="content2">CONTENT</div>
+            <div class="footer2">FOOTER</div>
+        </div>
+    </body>
+</html>

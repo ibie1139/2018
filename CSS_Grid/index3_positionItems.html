@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="basic2.css">
+        <link rel="stylesheet" href="index3_positionItems.css">
+        <!--If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+                /* click() can be applied to any HTML elements, not just <button> */
+                $(document).ready(function() {
+                    $(".header").click(function() {
+                        $(this).css("grid-column-start", "2");/* $(this) represents ".header" */
+                        $(".menu").css("grid-row-start", "1");
+                        /* Set a single CSS property value. However, even numbers should be in "" */
+                    })
+                });
+                $(document).ready(function() {
+                    $(".content").click(function() {
+                        /* change the content in this HTML element */
+                        $(this).html("You have finished your first two JQuery click functions. And remember to put the link of JQuery in <head> so that you can use JQuery library.");
+                        /* set multiple CSS properties -- use css({"...":"..."})
+                        Remember: no space around : */
+                        $(this).css({"font-size":"1em", "color":"black"});
+                    })
+                })
+                /* After JQuery exectues,
+                .header {grid-column: 2 / 7;}
+                .menu {grid-row: 1 / 3;}
+                */
+            </script>
+        <title>Positioning Items</title>
+    </head>
+    <body>
+        <div class="container1">
+            <div class="header">HEADER</div>
+            <div class="menu">MENU</div>
+            <div class="content">CONTENT</div>
+            <div class="footer">FOOTER</div>
+        </div>
+
+        <!-- <script>
+            $(document).ready(function() {
+                $(".header").click(function() {
+                    $(".header").css("grid-column-start", "2");
+                    $(".menu").css("grid-row-start", "1");
+                })
+            });
+        </script> -->
+
+        <div class="container2">
+            <div class="box1">A</div>
+            <div class="box2">B</div>
+            <div class="box3">C</div>
+            <div class="box4">D</div>
+            <div class="box5">E</div>
+            <div class="box6">F</div>
+            <div class="box7">G</div>
+            <div class="box8">H</div>
+            <div class="box9">I</div>
+        </div>
+    </body>
+</html>
