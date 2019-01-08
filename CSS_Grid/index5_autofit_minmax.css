@@ -1,0 +1,33 @@
+
+/* auto-fit and function minmax() */
+
+
+.container1 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* the col # is fixed */
+    grid-template-rows: repeat(2, 100px);
+    grid-gap: 3px;
+}
+
+.container2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 1fr);
+    grid-template-rows: repeat(2, 100px);
+    grid-gap: 3px;
+}
+
+.variation1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 100px); /* Though the col # is auto-fit, the width of column is not responsive but fixed to 100px, not the best one. While the left space on a row is less than 100px, no more columns can be fit in. */
+    grid-template-rows: repeat(2, 100px);
+    grid-gap: 3px;
+}
+
+/* Best Version */
+.variation2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    /* use minmax() to set the min and max width of the columns, so that the space < 100px can be used to fit one more column. */
+    grid-template-rows: repeat(2, 100px);
+    grid-gap: 3px;
+}
