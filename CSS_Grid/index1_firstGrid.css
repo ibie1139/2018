@@ -1,0 +1,15 @@
+
+/*Basic Grid Columns and Rows*/
+
+.container1 {
+    display: grid;
+    grid-template-columns: 49px 86px auto;/*auto means 'responsive' to width of webpage*/
+    grid-template-rows: 50px 88px 106px;
+    grid-gap: 3px;
+}
+
+.container2 {
+    display: grid;
+    /* Use grid-template insted of grid-template-column and grid-template-row */
+    grid-template: 50px 88px 106px / 89px auto 106px;/* row / column */
+}

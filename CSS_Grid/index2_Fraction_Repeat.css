@@ -1,0 +1,19 @@
+
+/*Fraction Units and Function repeat() */
+
+.container1 {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    /*fr = fraction unit, fr will be responsive automatically. */
+    grid-template-rows: repeat(4, 50px);
+    /*repeat(row or column #, width or height in units or fractions) Here, 50px can be replaced by "fr". */
+    grid-gap: 3px;
+}
+
+.container2 {
+    display: grid;
+    grid-template: repeat(4, 40px) / repeat(4, 1fr); /* row/column */
+    grid-gap: 3px;
+}
+/* set 4 rows, but 2 columns only, thus though it's set with 4 rows, there're 5 rows. */
+/* set 4 rows, but 4 columns, thus though it's set with 4 rows, there're not enough rows to be filled. */

@@ -1,0 +1,47 @@
+body {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-color: #ffeead;
+    margin: 5px;
+    padding: 10px;
+    height: 100%;
+}
+.container1, .container2 {
+    margin-bottom: 50px;
+}
+
+/*Here, regard each child div as a flexbox container. Then no need to use text-align for the content in each box, where content here is a number. Not regarding the whole class:container1 as a flex container. */
+.container1 > div {
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;/*Now the width of each div is adjusted according to the font size.*/
+    color: #ffeead;
+}
+
+.container1 > div:nth-of-type(1n) {background-color: #96ceb4;}
+.container1 > div:nth-of-type(3n) {background-color: #88bfd8;} 
+.container1 > div:nth-of-type(2n) {background-color: #ff6f69;}
+.container1 > div:nth-of-type(4n) {background-color: #ffcc5c;}
+
+.container2 > div {
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #ffeead;    
+}
+
+.container2 > div:nth-of-type(1n) {background-color: #96ceb4;} 
+.container2 > div:nth-of-type(3n) {background-color: #88bfd8;} 
+.container2 > div:nth-of-type(2n) {background-color: #ff6f69;}
+.container2 > div:nth-of-type(4n) {background-color: #ffcc5c;} 

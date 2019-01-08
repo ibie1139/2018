@@ -1,0 +1,48 @@
+
+/* Positioning Items */
+
+.container1 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 columns, 7 column lines */
+    grid-template-rows: 40px 200px 40px; /* 3 rows, 4 row lines */
+    grid-gap: 3px;
+}
+.header {
+    grid-column-start: 1;
+    grid-column-end: 7; /* number is for column line or row line, not the n-th column or n-th row. If there're 2 columns, there are 3 column lines. */
+}
+
+.menu {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    /* can use grid-row: row / column; */
+}
+
+.content {
+    grid-column: 2 / -1;
+}
+
+.footer {
+    grid-column: 1 / -1;/* -1 means the last col-line. This is a trick for webpages that the developer doesn't know how many columns there are, but the grid stretches to the last column. */
+}
+
+.container2 {
+    display: grid;
+    grid-template: repeat(4, 40px) / repeat(4, 1fr); /* row/column */
+    grid-gap: 3px;
+}
+
+/* Cannot use flex-order here, because all grid-items are themselves flexbox, the container. They are not flex items, thus they cannot use {order: #} */
+/* Do this using gird-area later */
+
+.box1 {
+    grid-row: 1/ 3;
+}
+
+.box3 {
+    grid-column: 3 / span 2; /* "span 2" means spanning 2 columns */
+}
+.box6 {
+    grid-column: -2 / -1; /* -1 means the last line, -2 means the second last line. */
+    grid-row: -4 / -1;
+}
