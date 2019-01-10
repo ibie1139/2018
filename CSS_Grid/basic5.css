@@ -1,0 +1,25 @@
+
+.container > div {
+    display: flex;
+    display: -moz-flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+.container > div > img {
+    /*height and width of each image should be 100% in its div, or it will be displayed as its original size, exceeding the div containing it. */
+    height: 100%;
+    width: 100%;
+    object-fit: justify;
+}
+
+html, body {
+    background-color: #ffeead;
+    margin: 10px;
+}
+
+#last {
+    align-items: end;
+}
