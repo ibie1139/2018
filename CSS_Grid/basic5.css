@@ -1,12 +1,4 @@
 
-body {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    background-color: #ffeead;
-    margin: 10px;
-}
-
 .container > div {
     display: flex;
     display: -moz-flex;
@@ -17,7 +9,17 @@ body {
 }
 
 .container > div > img {
-    /* height: 100%;
-    width: 100%; */
-    object-fit: cover;
+    /*height and width of each image should be 100% in its div, or it will be displayed as its original size, exceeding the div containing it. */
+    height: 100%;
+    width: 100%;
+    object-fit: justify;
+}
+
+html, body {
+    background-color: #ffeead;
+    margin: 10px;
+}
+
+#last {
+    align-items: end;
 }
