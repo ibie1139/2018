@@ -30,8 +30,8 @@ expandBttn.addEventListener('click', function() {
 
 
 //Task3: Add a new paragraph in #div1
-var newPara = document.createElement('p');
-var newText = document.createTextNode("Best Buy News-- Great new deals every day. \
+let newPara = document.createElement('p');
+let newText = document.createTextNode("Best Buy News-- Great new deals every day. \
 Get in on some of our lowest prices of the season before they're gone.");
 newPara.appendChild(newText);
 
