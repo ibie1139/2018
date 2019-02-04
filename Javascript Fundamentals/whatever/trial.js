@@ -1155,4 +1155,77 @@ element1[0].textContent='Time is ';
 // These modifying methods can be applied only to one element, not an array of elements
 
 //Promises and Error Handling
-//when error
+//When error occurs, JS code stop executing.
+//Example below: console.log() won't work
+// let ser = new Serverst;
+// console.log('continue')
+
+try {
+    let ser = new Serverst;
+}
+catch(error) {
+    console.log('Error: ', error);
+}//print the error thrown from the browser
+finally {
+    console.log('No matter an error is caught or not, keep running the script.')
+}//finally block will run no matter an error is thrown by try block or not.
+
+try {
+    earbud4 = 3;
+}
+catch(error) {
+    console.log('Error: ', error);
+}//In this one, catch messgae doesn't print.
+finally {
+    console.log('No matter an error is caught or not, keep running the script.');
+}
+
+//Developer defined error
+try {
+    throw new Error('earbud4 is equal to 3');//use keyword: throw
+}//Error is a built-in JS object
+catch(error) {
+    console.log('Error: ', error);
+}//Remember the syntax is: catch(error) {}
+finally {
+    console.log('No matter an error is caught or not, keep running the script.');
+}
+//throw: throw an exception which can be JS string, number, boolean or object.
+
+//Callback function: A callback is a function that's to be executed after another function has finished executing. Any function that's passed as an argument is called a callback function.
+
+//Create a Promise
+//You can think Promise as a holder for values that you'll retrieve once the async operation completes.
+let promise = new Promise(
+    (resolve, reject) => setTimeout(reject,1000,'someValue')//resolve and reject are functions
+)
+//Promise is a built-in JS object.
+console.log(promise);
+//Result:
+//__proto__: Promise[[PromiseStatus]]: "resolved"[[PromiseValue]]: "someValue"
+
+let promise1 = new Promise(
+    (resolve, reject) => setTimeout(reject, 1000, 'someValue')
+)
+console.log(promise1)
+
+//Settling a Promise
+promise.then(
+    value => console.log('fulfilled ' + value),
+    error => console.log('Rejected ' + error)
+)//The log result will change based on the setTimeout function has a "reject" or "resolve" param passed in.
+
+//then() is a function, the functions passed in the () are parameters, so use "," between these function parameters.
+
+//Data Access Using HTTP
+//Data Access Using XHR, Jquery
+//XHR: XML HTTP Request. XML and JSON are 2 text file formats.
+//JQuery: import $ from 'jquery' --> let promise = $.get()
+//Example: 
+// import $ from 'jquery'
+
+// let promise3 = $.get('https://astrologyapi.com/')
+// promise3.then(
+//     value => console.log('success: ', value),
+//     error => console.log('Error: ', error)
+// )
