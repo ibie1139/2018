@@ -333,6 +333,10 @@ console.log(person.name);
 console.log(person.age);
 console.log(person.gender);//the syntax
 
+//Another way to call the property in an object
+let apen = {pen1: 'john', pen2: 'ben', pen3: 'susan'};
+console.log(apen['pen1']);//why apen[pen1] not available?
+
 //Pass objects to functions
 let card={
     suit: 'Hearts',
@@ -769,6 +773,8 @@ console.log(glove2.getGloveId.apply(glove3, ['id ','is ']));//id is 672
 //Syntax: apply(contextDesired, [array of arguments])
 console.log(glove2.getGloveOwner.apply(glove3));//Zoe
 
+console.log(glove2.getGloveId.call(glove3, 'id ','is '));//id is 672 -- call() no need to use array to contain arguments of the function
+
 //bind()
 //Calling f.bind(someObject) creates a new function with the same body and scope as f, but where this occurs in the original function, in the new function it is permanently bound to the first argument of bind, regardless of how the function is being used.
 
@@ -1013,7 +1019,7 @@ class Vehicle1 {
     //A new. class declaration not inheriting from Vehicle
 }//nothing
 
-let vehicle1 = new Vehicle1();
+let vehicle1 = new Vehicle1();// This is not the object of class Vehicle.
 console.log(vehicle1);//Vehicle1 {} -- nothing
 
 class Car extends Vehicle {
@@ -1052,7 +1058,7 @@ console.log(car2.start2());
 class EarbudClass {
     //Here, constructor is like the default value
     constructor() {
-       this.id= 0;//though this is a constuctor, it's of Class, not of Object, thus use ";", not using "," between the properties
+       this.id= 0;//though this is a constuctor and a constructor is a function, it's of Class, not of Object, thus use ";", not using "," between the properties
        this.type = 'unknown';
     }
     insertInfo(id, type) {
@@ -1100,3 +1106,126 @@ console.log(computer1.insertInfo(86, "Laptop", "Microsoft"));
 //Result: Computer id: 86; type: Laptop; brand:Microsoft
 
 //Programming the BOM and DOM
+//The Window Object--Browser Object Model: It has some properties(DOM, Location Object, console), methods and events(not common in BOM)
+
+console.log(innerWidth);
+console.log(innerHeight);//These are properties of the browser screen, returning the width and height of the screen.
+
+//Timers
+//The window object allows execution of code at specified time intervals. These time intervals are called timing events.
+let timeOutId = setTimeout(function() {alert('bobobo')}, 5000);
+//In order to clear it, assign it to a variable first.
+//No need to call this function, it's called by itself, even it's part of the assignment.
+clearTimeout(timeOutId);
+
+//setInterval(func, timer) and clearInterval(setIntervalId) is in 'trial.html'
+let myTimer1=setInterval(countTime1, 1000);
+function countTime1() {
+    let testDate = new Date();
+    alert(testDate.toLocaleTimeString("zh-Hans-CN"));
+}
+clearInterval(myTimer1);
+
+//So, we can put the function name in setInterval() and setTimeout(), and define the function later, or just put the entire function in the parentheses.
+
+//Location Object
+//The location object contains information about the current URL. The location object is part of the window object and is accessed through the window.location property.
+console.log(location.href);
+console.log(location.host);
+console.log(location.hostname);
+console.log(location.port);
+console.log(location.pathname);
+console.log(location.protocol);//The protocol is a standard that specifies how data are transmitted between computers.
+console.log(location.search);
+//Above are the properties of location object.
+
+//assign(), reload() are methods of location object model.
+
+//Modify DOM Elements
+let element1 = document.getElementsByTagName('p');
+let element2 = document.getElementsByClassName('controller');
+let element3 = document.getElementById('demo-CHN');
+console.log(element1, element2);//each element is an array
+element2[0].setAttribute('label', 'stop-button');
+console.log(element2[0]);
+element3.classList.add('clock');
+console.log(element3);
+element2[1].style.color='blue';
+element1[0].textContent='Time is ';
+// These modifying methods can be applied only to one element, not an array of elements
+
+//Promises and Error Handling
+//When error occurs, JS code stop executing.
+//Example below: console.log() won't work
+// let ser = new Serverst;
+// console.log('continue')
+
+try {
+    let ser = new Serverst;
+}
+catch(error) {
+    console.log('Error: ', error);
+}//print the error thrown from the browser
+finally {
+    console.log('No matter an error is caught or not, keep running the script.')
+}//finally block will run no matter an error is thrown by try block or not.
+
+try {
+    earbud4 = 3;
+}
+catch(error) {
+    console.log('Error: ', error);
+}//In this one, catch messgae doesn't print.
+finally {
+    console.log('No matter an error is caught or not, keep running the script.');
+}
+
+//Developer defined error
+try {
+    throw new Error('earbud4 is equal to 3');//use keyword: throw
+}//Error is a built-in JS object
+catch(error) {
+    console.log('Error: ', error);
+}//Remember the syntax is: catch(error) {}
+finally {
+    console.log('No matter an error is caught or not, keep running the script.');
+}
+//throw: throw an exception which can be JS string, number, boolean or object.
+
+//Callback function: A callback is a function that's to be executed after another function has finished executing. Any function that's passed as an argument is called a callback function.
+
+//Create a Promise
+//You can think Promise as a holder for values that you'll retrieve once the async operation completes.
+let promise = new Promise(
+    (resolve, reject) => setTimeout(reject,1000,'someValue')//resolve and reject are functions
+)
+//Promise is a built-in JS object.
+console.log(promise);
+//Result:
+//__proto__: Promise[[PromiseStatus]]: "resolved"[[PromiseValue]]: "someValue"
+
+let promise1 = new Promise(
+    (resolve, reject) => setTimeout(reject, 1000, 'someValue')
+)
+console.log(promise1)
+
+//Settling a Promise
+promise.then(
+    value => console.log('fulfilled ' + value),
+    error => console.log('Rejected ' + error)
+)//The log result will change based on the setTimeout function has a "reject" or "resolve" param passed in.
+
+//then() is a function, the functions passed in the () are parameters, so use "," between these function parameters.
+
+//Data Access Using HTTP
+//Data Access Using XHR, Jquery
+//XHR: XML HTTP Request. XML and JSON are 2 text file formats.
+//JQuery: import $ from 'jquery' --> let promise = $.get()
+//Example: 
+// import $ from 'jquery'
+
+// let promise3 = $.get('https://astrologyapi.com/')
+// promise3.then(
+//     value => console.log('success: ', value),
+//     error => console.log('Error: ', error)
+// )

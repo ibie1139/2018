@@ -6,7 +6,25 @@
     <body>
         <h1 id="title">Whatever</h1>
         <h4>by whoever</h4>
-
+        <p>A script on this page starts this clock: </p>
+        <p id="demo-CHN"></p>
+        <p id="demo-USA"></p>
+        <button class="controller" onclick="clearTimeout(myTimer)">STOP</button>
+        <br />
+        <button class="controller" onclick='newLocation()'>Go to Email</button>
+        <!-- use onclick="..." in <button></button> -->
         <script type="module" src="./trial.js"></script>
+        <script>
+            let myTimer=setInterval(countTime, 1000);
+            function countTime() {
+                let testDate = new Date();
+                document.getElementById("demo-CHN").innerHTML = testDate.toLocaleTimeString("zh-Hans-CN");
+                document.getElementById("demo-USA").innerHTML = testDate.toLocaleTimeString("en-US");
+                //in toLocaleTimeString("..."), locale is the parameter, need to check the specific locale of a country
+            }
+            function newLocation() {
+                location.assign('https://outlook.office.com/owa/?realm=baruchmail.cuny.edu&path=/mail/sentitems');
+            }
+        </script>
     </body>
 </html>
